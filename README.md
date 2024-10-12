@@ -89,7 +89,8 @@ Open IIS and Run as an Administator. Register the PHP from within IIS and reload
 
 
 
-Now, we are ready to install osTicket. Download osTicket. Then extract and copy the "Upload" folder into c:\inetpub\wwwroot. Afterwards rename the folder to <b>_osTicket_</b>.
+Now, we are ready to install osTicket. Download osTicket. Then extract and copy the "Upload" folder into:
+- c:\inetpub\wwwroot. Afterwards rename the folder to <b>_osTicket_</b>.
 Afterwards, reload IIS (Open IIS, Stop and Start the server)
 
 <img width="810" alt="Screenshot 2024-10-11 at 7 12 39 PM" src="https://github.com/user-attachments/assets/4eb138da-ba5b-4f2f-b6aa-3dbe02ffb7cb">
@@ -111,9 +112,25 @@ Go back into IIS manager and enable some extensions. Click Sites > Default > osT
 
 
 
+Go back into c:\inetpub\wwwroot\osTicket\include\ost-sampleconfig.php and rename the file to:
+- c:\inetpub\wwwroot\osTicket\include\ost-config.php
+- Assign permissions to ost-config.php
+- Disable inheritance->Removeall New Permissions->Everyone->all
+
+<img width="360" alt="Screenshot 2024-10-11 at 7 26 07 PM" src="https://github.com/user-attachments/assets/6032341c-2483-406e-9cab-d0a9ae7ca1bb">
 
 
+Afterwards continue setting up osTicket in the browser (click Continue) then you will name the Helpdesk to your liking. Select a default email that will receive emails from customers who submit tickets. Continue Setting up osticket in the browser.
 
+- MySQL Database: osTicket
+- MySQL Username: root
+- MySQL Password: Password1
+- Click “Install Now!”
 
+<img width="847" alt="Screenshot 2024-10-11 at 9 41 46 PM" src="https://github.com/user-attachments/assets/ea0f53c2-94f9-40b3-9857-b064d3f063f1">
 
-asdfasdf
+You have successfully installed osTicket!
+
+Clean up 
+- Delete: C:\inetpub\wwwroot\osTicket\setup
+- Set Permissions to “Read” only: C:\inetpub\wwwroot\osTicket\include\ost-config.php
